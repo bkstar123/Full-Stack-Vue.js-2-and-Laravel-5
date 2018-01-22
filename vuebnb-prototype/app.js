@@ -8,6 +8,27 @@ var app = new Vue({
         prices: sample.prices,
 		headerImageStyle: {
            'background-image': 'url(sample/header.jpg)'
-        }
+        },
+        contracted: true,
+        modalOpen: false
+	},
+	watch: {
+		modalOpen() {
+			let className = 'modal-open';
+			if (this.modalOpen) {
+				document.body.classList.add(className);
+			} else {
+				document.body.classList.remove(className);
+			}
+		}
+	},
+	created() {
+		document.addEventListener('keyup', escapeKeyListener);
 	}
 });
+
+function escapeKeyListener(evt) {
+     if (evt.keyCode === 27 && app.modalOpen) {
+       app.modalOpen = false;
+     }
+};
