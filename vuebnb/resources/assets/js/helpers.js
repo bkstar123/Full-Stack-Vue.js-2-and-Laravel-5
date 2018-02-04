@@ -42,7 +42,7 @@ let populateAmenitiesAndPrices = function(state) {
     item.title = prices.get(item.title);
     return item;
   });
-
+  
   return obj;
 };
 

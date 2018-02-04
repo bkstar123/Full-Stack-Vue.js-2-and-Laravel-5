@@ -14,8 +14,4 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::get('listing/{listing}', 'ListingController@get_listing_api');
-
-Route::get('/listing/{listing}', function ($id) {
-     return view('app');
-});
+Route::get('listing/{listing}', 'ListingController@get_listing_api');
