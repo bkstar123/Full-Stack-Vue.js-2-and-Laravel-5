@@ -46,8 +46,6 @@ let populateAmenitiesAndPrices = function(state) {
   return obj;
 };
 
-export { populateAmenitiesAndPrices };
-
 let groupByCountry = function (listings) {
   if (!listings) return {};
   return listings.reduce(function (rv, x) {
@@ -60,4 +58,4 @@ let groupByCountry = function (listings) {
   }, {});
 };
 
-export { groupByCountry };
+export { populateAmenitiesAndPrices, groupByCountry };
