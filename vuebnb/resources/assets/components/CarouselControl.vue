@@ -17,7 +17,7 @@
   }
 </script>
 
-<style scoped>
+<style>
 .carousel-control {
    padding: 1rem;
    color: #ffffff;

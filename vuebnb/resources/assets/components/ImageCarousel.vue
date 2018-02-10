@@ -39,7 +39,7 @@
     } 
   }
 </script>
-<style scoped>
+<style>
 .image-carousel {
   height: 100%;
   margin-top: -12vh;

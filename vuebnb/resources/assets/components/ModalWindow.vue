@@ -38,7 +38,7 @@
         },
 	}
 </script>
-<style scoped>
+<style>
 #modal {
        display: none;
        position: fixed;

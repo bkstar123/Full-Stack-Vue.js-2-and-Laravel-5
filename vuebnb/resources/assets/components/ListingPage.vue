@@ -1,7 +1,7 @@
 <template>
   <div>
-    <header-image :image-url="images[0]" @header-clicked="openModal"></header-image>
-      <div class="container">
+    <header-image v-if="images[0]" :image-url="images[0]" @header-clicked="openModal"></header-image>
+      <div class="listing-container">
   	    <div class="heading">
   		  <h1>{{ title }}</h1>
   		  <p>{{ address }}</p>
@@ -44,10 +44,19 @@
     import HeaderImage from '../components/HeaderImage.vue';
     import FeatureList from '../components/FeatureList.vue';
     import ExpandableText from '../components/ExpandableText.vue';
+    import routeMixin from '../js/route-mixin';
 
     export default {
+      mixins: [ routeMixin ],
     	data() {
-    	  return Object.assign(model, {})	
+    	  return {
+          title: null,
+          about: null,
+          address: null,
+          amenities: [],
+          prices: [],
+          images: []
+         }
     	}, 
 	    components: {
           ImageCarousel,
@@ -57,9 +66,12 @@
           ExpandableText
         },
         methods: {
-    	  openModal() {
-    		this.$refs.imagemodal.modalOpen = true;
-    	  }
+          assignData({ listing }) {
+            Object.assign(this.$data, populateAmenitiesAndPrices(listing));
+          },
+    	    openModal() {
+    		    this.$refs.imagemodal.modalOpen = true;
+    	    }
         }
     }
 </script>
