@@ -185,3 +185,16 @@ button {
      bottom: 20px;
      left: 20px;
 }
+
+.saved-container {
+     margin: 0 auto;
+     padding: 0 25px;
+}
+
+@media (min-width: 1131px) {
+  .saved-container {
+     width: 1095px;
+     padding-left: 40px;
+     margin-bottom: -10px;
+  } 
+}
